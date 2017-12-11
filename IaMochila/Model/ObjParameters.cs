@@ -21,6 +21,7 @@ namespace Mochila.Model
             private static int taxaMutacao = 15;
 
             private static int index = 0;
+            private static int qtdMutacoes = 0;
 
 
         private static List<ObjItem> itens = new List<ObjItem>();
@@ -37,6 +38,8 @@ namespace Mochila.Model
         public int MelhoresPais { get => melhoresPais; set => melhoresPais = value; }
         public int TaxaMutacao { get => taxaMutacao; set => taxaMutacao = value; }
         public int Index { get => index; set => index = value; }
+        public int QtdMutacoes { get => qtdMutacoes; set => qtdMutacoes = value; }
+
 
         public void CommitListItem(List<ObjItem> lista) {
             itens = lista;

@@ -94,6 +94,9 @@ namespace IaMochila.View
             parameters.GetMochilas().ForEach(delegate (ObjMochila mochila) {
                 listBox_Mochilas_best.Items.Add(mochila.Nome + " = " + mochila.getPeso() + "Kg - R$ " + mochila.getValor());
             });
+
+            Console.WriteLine(parameters.QtdMutacoes);
+            mutacoesLabel.Text = "Mutações: " + parameters.QtdMutacoes;
         }
 
 

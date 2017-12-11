@@ -44,6 +44,7 @@
             this.button_Processar = new System.Windows.Forms.Button();
             this.ValorCol1 = new System.Windows.Forms.Label();
             this.PesoCol1 = new System.Windows.Forms.Label();
+            this.mutacoesLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBox_Itens
@@ -191,11 +192,21 @@
             this.PesoCol1.TabIndex = 17;
             this.PesoCol1.Text = "Peso";
             // 
+            // mutacoesLabel
+            // 
+            this.mutacoesLabel.AutoSize = true;
+            this.mutacoesLabel.Location = new System.Drawing.Point(494, 436);
+            this.mutacoesLabel.Name = "mutacoesLabel";
+            this.mutacoesLabel.Size = new System.Drawing.Size(60, 13);
+            this.mutacoesLabel.TabIndex = 18;
+            this.mutacoesLabel.Text = "Mutações: ";
+            // 
             // Resultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 531);
+            this.Controls.Add(this.mutacoesLabel);
             this.Controls.Add(this.PesoCol1);
             this.Controls.Add(this.ValorCol1);
             this.Controls.Add(this.button_Processar);
@@ -238,5 +249,6 @@
         private System.Windows.Forms.Button button_Processar;
         private System.Windows.Forms.Label ValorCol1;
         private System.Windows.Forms.Label PesoCol1;
+        private System.Windows.Forms.Label mutacoesLabel;
     }
 }

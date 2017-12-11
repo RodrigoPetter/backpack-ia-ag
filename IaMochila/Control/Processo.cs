@@ -14,6 +14,7 @@ namespace IaMochila.Control
     {
         ObjParameters objParameters = new ObjParameters();
         List<ObjMochila> mochilas;
+        Random rdm = new Random();
 
         public Processo()
         {
@@ -29,6 +30,7 @@ namespace IaMochila.Control
             OrdenarByValor();
             objParameters.CommitListMochila(mochilas);
 
+            Console.WriteLine(objParameters.QtdMutacoes);
         }
 
         private void EliminarPiores(int qtdEliminar)
@@ -87,11 +89,14 @@ namespace IaMochila.Control
 
         private int Mutacao(int value)
         {
-            Random rdm = new Random();
+            
             int numero = rdm.Next(0, 100);
             if (numero <= objParameters.TaxaMutacao)
             {
-                if(value == 1)
+
+                objParameters.QtdMutacoes++;
+
+                if (value == 1)
                 {
                     value = 0;
                 }

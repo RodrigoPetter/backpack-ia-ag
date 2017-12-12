@@ -51,6 +51,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.percentOtimo = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -254,14 +256,32 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.percentOtimo);
+            this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.NumeroGeracoes);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Location = new System.Drawing.Point(194, 168);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(158, 72);
+            this.groupBox4.Size = new System.Drawing.Size(158, 101);
             this.groupBox4.TabIndex = 24;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Critérios de parada";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "% do ótimo";
+            // 
+            // percentOtimo
+            // 
+            this.percentOtimo.Location = new System.Drawing.Point(6, 75);
+            this.percentOtimo.Name = "percentOtimo";
+            this.percentOtimo.Size = new System.Drawing.Size(142, 20);
+            this.percentOtimo.TabIndex = 17;
             // 
             // Form_Parametros
             // 
@@ -313,6 +333,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox percentOtimo;
+        private System.Windows.Forms.Label label4;
     }
 }
 

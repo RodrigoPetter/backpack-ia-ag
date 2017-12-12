@@ -45,6 +45,8 @@
             this.ValorCol1 = new System.Windows.Forms.Label();
             this.PesoCol1 = new System.Windows.Forms.Label();
             this.mutacoesLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.melhorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBox_Itens
@@ -201,11 +203,30 @@
             this.mutacoesLabel.TabIndex = 18;
             this.mutacoesLabel.Text = "Mutações: ";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(221, 436);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(124, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Melhor mochila possível:";
+            // 
+            // melhorLabel
+            // 
+            this.melhorLabel.AutoSize = true;
+            this.melhorLabel.Location = new System.Drawing.Point(222, 458);
+            this.melhorLabel.Name = "melhorLabel";
+            this.melhorLabel.Size = new System.Drawing.Size(0, 13);
+            this.melhorLabel.TabIndex = 20;
+            // 
             // Resultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 531);
+            this.Controls.Add(this.melhorLabel);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.mutacoesLabel);
             this.Controls.Add(this.PesoCol1);
             this.Controls.Add(this.ValorCol1);
@@ -250,5 +271,7 @@
         private System.Windows.Forms.Label ValorCol1;
         private System.Windows.Forms.Label PesoCol1;
         private System.Windows.Forms.Label mutacoesLabel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label melhorLabel;
     }
 }

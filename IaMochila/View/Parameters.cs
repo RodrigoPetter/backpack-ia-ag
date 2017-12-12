@@ -29,6 +29,7 @@ namespace IaMochila
             NumeroGeracoes.Text = objParameters.NumeroGeracoes.ToString();
             MelhoresPais.Text = objParameters.MelhoresPais.ToString();
             TaxaMutacao.Text = objParameters.TaxaMutacao.ToString();
+            percentOtimo.Text = objParameters.PercentOtimo.ToString();
         }
         
 
@@ -53,6 +54,7 @@ namespace IaMochila
             objParameters.NumeroGeracoes = int.Parse(NumeroGeracoes.Text);
             objParameters.MelhoresPais = int.Parse(MelhoresPais.Text);
             objParameters.TaxaMutacao = int.Parse(TaxaMutacao.Text);
+            objParameters.PercentOtimo = int.Parse(percentOtimo.Text);
             this.Visible = false;
         }
     }

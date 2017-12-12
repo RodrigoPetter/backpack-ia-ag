@@ -11,13 +11,14 @@ using System.Windows.Forms;
 namespace IaMochila.Control
 {
     class Processo
-    {
+    {        
         ObjParameters objParameters = new ObjParameters();
-        List<ObjMochila> mochilas;
-        Random rdm = new Random();
+        List<ObjMochila> mochilas;        
+        Random rdm = new Random();        
 
         public Processo()
         {
+            
             this.mochilas = objParameters.GetMochilas();
             OrdenarByValor();
             for (int i = 0; i < objParameters.NumeroGeracoes; i++)
@@ -26,11 +27,19 @@ namespace IaMochila.Control
                 mochilas.AddRange(novasMochilas);
                 OrdenarByValor();
                 EliminarPiores(novasMochilas.Count);
+
+                //verifica se está próximo do ótimo
+                if(mochilas[0].getPercentOtimo() >= objParameters.PercentOtimo)
+                {
+                    break;
+                }
+
             }
+
+            Console.WriteLine();
             OrdenarByValor();
             objParameters.CommitListMochila(mochilas);
 
-            Console.WriteLine(objParameters.QtdMutacoes);
         }
 
         private void EliminarPiores(int qtdEliminar)

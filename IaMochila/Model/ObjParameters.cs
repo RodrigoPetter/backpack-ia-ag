@@ -19,6 +19,7 @@ namespace Mochila.Model
             private static int numeroGeracoes = 1000;
             private static int melhoresPais = 10;
             private static int taxaMutacao = 15;
+            private static int percentOtimo = 70;
 
             private static int index = 0;
             private static int qtdMutacoes = 0;
@@ -37,9 +38,13 @@ namespace Mochila.Model
         public int NumeroGeracoes { get => numeroGeracoes; set => numeroGeracoes = value; }
         public int MelhoresPais { get => melhoresPais; set => melhoresPais = value; }
         public int TaxaMutacao { get => taxaMutacao; set => taxaMutacao = value; }
+        public int PercentOtimo { get => percentOtimo; set => percentOtimo = value; }
         public int Index { get => index; set => index = value; }
         public int QtdMutacoes { get => qtdMutacoes; set => qtdMutacoes = value; }
 
+
+        public ObjMochila MelhorMochilaPossivel { get => melhorMochilaPossivel; set => melhorMochilaPossivel = value; }
+        public static ObjMochila melhorMochilaPossivel = new ObjMochila(pesoMaxMochilas, pesoMinObjetos, valorMaxObjetos);
 
         public void CommitListItem(List<ObjItem> lista) {
             itens = lista;
@@ -56,6 +61,11 @@ namespace Mochila.Model
         public List<ObjMochila> GetMochilas()
         {
             return mochilas;
+        }
+
+        public void atualizarMelhorMochila()
+        {
+            this.MelhorMochilaPossivel = new ObjMochila(pesoMaxMochilas, pesoMinObjetos, valorMaxObjetos);
         }
 
         public ObjParameters(){}

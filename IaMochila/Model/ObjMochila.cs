@@ -15,7 +15,14 @@ namespace IaMochila.Model
         private int Valor;
         private List<int> listItens = new List<int>();
 
-
+        public ObjMochila() { }
+        public ObjMochila(int pesoMaximo, int objetoPesoMinimo, int objetoValorMaximo) {
+            while((this.Peso + objetoPesoMinimo) <= pesoMaximo)
+            {
+                this.Peso += objetoPesoMinimo;
+                this.Valor += objetoValorMaximo;
+            }
+        }
 
         public string Nome { get; set; }
 
@@ -62,5 +69,11 @@ namespace IaMochila.Model
             this.listItens[index] = 0;
         }
 
+        public int getPercentOtimo()
+        {
+            int percent = (this.Valor * 100) / objParameters.MelhorMochilaPossivel.Valor;
+
+            return percent;
+        }
     }
 }

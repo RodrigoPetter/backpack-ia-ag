@@ -15,7 +15,8 @@ namespace IaMochila.View
 {
     public partial class Resultados : Form
     {
-        
+
+        private ObjParameters parameters = new ObjParameters();
 
         public Resultados()
         {
@@ -24,6 +25,7 @@ namespace IaMochila.View
 
         private void button_GerarItens_Click(object sender, EventArgs e)
         {
+            parameters.atualizarMelhorMochila();
             ListObjItem itens = new ListObjItem();
             itens.CommitList();
             int ValorItem = 0;
@@ -34,9 +36,9 @@ namespace IaMochila.View
                 ValorItem += item.Valor;
                 PesoItem += item.Peso;
             });
-            ValorCol1.Text = "R$ " + ValorItem.ToString();
-            PesoCol1.Text = PesoItem.ToString() + " Kg";
-
+            ValorCol1.Text = "Total de valores: R$ " + ValorItem.ToString();
+            PesoCol1.Text = "Total de pesos: "+PesoItem.ToString() + " Kg";
+            melhorLabel.Text = parameters.MelhorMochilaPossivel.getPeso() + " Kg" + " | R$ " + parameters.MelhorMochilaPossivel.getValor();
         }
 
         private void Resultados_Load(object sender, EventArgs e)
@@ -45,8 +47,7 @@ namespace IaMochila.View
         }
 
         private void button_AprimorarPopulacao_Click(object sender, EventArgs e)
-        {
-            ObjParameters parameters = new ObjParameters();
+        {            
             ListObjMochila objMochila = new ListObjMochila();
             objMochila.CommitList();
             
@@ -92,10 +93,9 @@ namespace IaMochila.View
             listBox_Mochilas_best.Items.Clear();
 
             parameters.GetMochilas().ForEach(delegate (ObjMochila mochila) {
-                listBox_Mochilas_best.Items.Add(mochila.Nome + " = " + mochila.getPeso() + "Kg - R$ " + mochila.getValor());
+                listBox_Mochilas_best.Items.Add(mochila.Nome + " = " + mochila.getPeso() + "Kg - R$ " + mochila.getValor() + " |        " + mochila.getPercentOtimo() + "%");
             });
 
-            Console.WriteLine(parameters.QtdMutacoes);
             mutacoesLabel.Text = "Mutações: " + parameters.QtdMutacoes;
         }
 

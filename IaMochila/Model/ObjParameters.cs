@@ -13,12 +13,12 @@ namespace Mochila.Model
             private static int numeroObjetos = 100;
             private static int valorMinObjetos = 1;
             private static int valorMaxObjetos = 30;
-            private static int pesoMinObjetos = 1;
+            private static int pesoMinObjetos = 10;
             private static int pesoMaxObjetos = 20;
             private static int tamanhoPopulacao = 100;
             private static int numeroGeracoes = 1000;
             private static int melhoresPais = 10;
-            private static int taxaMutacao = 15;
+            private static int taxaMutacao = 5;
             private static int percentOtimo = 70;
 
             private static int index = 0;

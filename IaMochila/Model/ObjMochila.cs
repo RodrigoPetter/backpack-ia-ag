@@ -71,9 +71,12 @@ namespace IaMochila.Model
 
         public int getPercentOtimo()
         {
-            int percent = (this.Valor * 100) / objParameters.MelhorMochilaPossivel.Valor;
+            int percentValor = (this.Valor * 100) / objParameters.MelhorMochilaPossivel.Valor;
+            int percentPeso = (this.Peso * 100) / objParameters.MelhorMochilaPossivel.Peso;
 
-            return percent;
+            percentPeso = percentPeso > 100 ? 0 : percentPeso;
+
+            return (percentValor+ percentPeso)-100;
         }
     }
 }
